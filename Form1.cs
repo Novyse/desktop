@@ -21,7 +21,7 @@ namespace MessangerAppWebView
 
         private void SetupForm()
         {
-            this.Text = "Messanger";
+            this.Text = "Buzz";
             this.Size = new Size(1280, 720);
             this.FormClosing += Form1_FormClosing;
             this.Icon = new Icon("assets/icon.ico");
@@ -73,7 +73,7 @@ namespace MessangerAppWebView
             };
 
             this.Controls.Add(webView);
-            webView.Source = new Uri("https://web.messanger.bpup.israiken.it");
+            webView.Source = new Uri("https://web.buzz.israiken.it");
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
