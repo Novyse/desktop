@@ -1,0 +1,27 @@
+[package]
+name = "novyse"
+version = "0.0.1"
+description = "Some really new messasing app."
+authors = ["SamueleOrazioDurante", "Matt3opower", "Eliabers"]
+license = ""
+repository = "https://github.com/Novyse/desktop"
+default-run = "novyse"
+edition = "2021"
+rust-version = "1.60"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5", features = [ "window-hide", "window-close", "app-hide", "window-unmaximize", "shell-open", "window-show", "window-unminimize", "window-start-dragging", "window-maximize", "app-show", "window-set-focus", "window-print", "window-minimize", "system-tray"] }
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
+# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
+# DO NOT REMOVE!!
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]

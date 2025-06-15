@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novyse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+        }
+        
+        #webview-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        #webview {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+        
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="webview-container">
+        <div class="loading" id="loading">Loading web.novyse.com...</div>
+        <iframe 
+            id="webview" 
+            src="https://web.novyse.com"
+            onload="hideLoading()"
+            onerror="showError()">
+        </iframe>
+    </div>
+
+    <script>
+        // Import Tauri's API
+        const { invoke } = window.__TAURI__.tauri;
+        const { appWindow } = window.__TAURI__.window;
+        
+        let controlsVisible = true;
+    
+        
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+        
+        function showError() {
+            document.getElementById('loading').innerHTML = 'Failed to load novyse.com<br>Check your internet connection';
+            document.getElementById('loading').style.color = '#ff3b30';
+        }
+
+    </script>
+</body>
+</html>
