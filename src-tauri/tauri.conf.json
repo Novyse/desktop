@@ -2,8 +2,8 @@
   "build": {
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist",
+    "devPath": "https://web.novyse.com",
+    "distDir": "https://web.novyse.com",
     "withGlobalTauri": false
   },
   "package": {
