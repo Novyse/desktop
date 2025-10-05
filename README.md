@@ -1,6 +1,6 @@
 DEPRECATED
 
-will remove on 0.8
+Removed on 0.8, next desktop app will use electron and Will be released on 0.9
 
 # Tauri + Vanilla
 
